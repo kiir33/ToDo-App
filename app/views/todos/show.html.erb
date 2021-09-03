@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<div class="d-flex justify-content-center h3">
+<%= 'ToDo No.' + @todo.id.to_s %>
+</div>
+
+<div class = "p-5 m-4 bg-dark text-light rounded-3">
+
+<p class="d-flex justify-content-center h3">
+  <%= @todo.title %>
+</p>
+
+<p class="d-flex justify-content-center h5 mt-4">
+  <%= @todo.description %>
+</p>
+
+</div>
+
+<br/>
+<br/>
+
+<div class="d-flex justify-content-center">
+<%= link_to 'Back', todos_path, class:"btn btn-outline-secondary  me-2" %>
+<%= link_to 'Edit', edit_todo_path(@todo), class:"btn btn-outline-primary ms-2" %>
+</div>

@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+
+<div class="d-flex">
+  <h1>Posts</h1>
+  <%= link_to 'Create New Post', new_post_path, class:"ms-auto btn btn-success btn-lg" %>
+</div>
+
+<% @posts.each do |post| %>
+      <div class="card p-4 mt-4">
+        <h5 class="card-title"><%= post.title %></h5>
+        <p class="card-text"><%= post.body %></p>
+        <div class="d-flex mt-4">
+        <%= link_to 'Show', post, class:"btn btn-outline-secondary m-2" %>
+        <%= link_to 'Edit', edit_post_path(post), class:"btn btn-outline-secondary m-2" %>
+        <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, 
+        class:"btn btn-outline-secondary m-2" %>
+        </div>
+      </div>
+    <% end %>
+
+<br>
+
+
+</div>
